@@ -1,0 +1,21 @@
+﻿<Window x:Class="MailSpider.UI.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MailSpider" Height="300" Width="300">
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock></TextBlock>
+        </StatusBar>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" Text="Search..."></TextBlock>
+                <Button DockPanel.Dock="Right" MinWidth="40" Margin="5" Command="{Binding Path=GoCommand}" CommandParameter="{Binding ElementName=txtSearch, Path=Text}" >Go</Button>                
+                <TextBox Margin="5,5,0,5" Name="txtSearch" ></TextBox>                
+            </DockPanel>
+            <DockPanel Margin="5">
+                <TextBlock DockPanel.Dock="Top" VerticalAlignment="Center" Text="Results"></TextBlock>
+                <ListBox ItemsSource="{Binding Path=CurrentResults}"></ListBox>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>
